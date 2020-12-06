@@ -15,18 +15,18 @@ void setup() {
   servo.attach(3);
 }
 void loop() {
-  
   if (radio.available()) {
     boolean state;
     radio.read(&state, sizeof(state));
     Serial.println(state);
     if (state == 1) {
+      //add LED command here (to make lightup for 1 second)
       Serial.println("Working");
       servo.write(180);
     }
-    else{
-     servo.write(20);
-     Serial.println("not working");
-    }
+  else {
+    servo.write(20);
+    Serial.println("not working");
+  }
   }
 }
