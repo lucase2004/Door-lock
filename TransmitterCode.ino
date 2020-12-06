@@ -18,19 +18,20 @@ void setup() {
 void loop() {
   int val = digitalRead(2);
   if (val == HIGH){
-      if (power) {
+    if (power) {
       power = false;
       Serial.println("Off");
       boolean state = 0;
       radio.write(&state, sizeof(state));
       delay(1000);
-       }
-      else {
-      power = true; 
-      Serial.println("On");
-      boolean state = 1;
-      radio.write(&state, sizeof(state));
-      delay(1000);
       }
+  else {
+    //add LED command here to lightup for one second
+    power = true; 
+    Serial.println("On");
+    boolean state = 1;
+    radio.write(&state, sizeof(state));
+    delay(1000);
+  }
   }
 }
