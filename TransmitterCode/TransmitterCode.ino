@@ -41,6 +41,7 @@ void loop() {
       radio.write(&state, sizeof(state)); //sends signal to receiver to control servo
       delay(1000);
       digitalWrite(ledPin, LOW); //turn off LED after 1 sec
+      //Im pushing a comment to github bcuz Dylan is testing me
     }
   }
 }
