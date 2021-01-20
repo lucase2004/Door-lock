@@ -30,6 +30,8 @@ void loop() {
       digitalWrite(ledPin, HIGH); //turn LED on
       boolean state = 0;
       radio.write(&state, sizeof(state));
+      /* & returns the address (physical location) of a variable. Here, &state returns the location of state.     
+       * sizeof is an operator (+, -, *, /, %, OR, AND, XOR, etc) that returns the size in bytes of something */
       delay(1000);
       digitalWrite(ledPin, LOW); // turn off LED after 1 sec
     }
